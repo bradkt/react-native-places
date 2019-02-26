@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "react-native run-android",
-    "test": "jest"
+    "test": "jest",
+    "startcli": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native run-android"
   },
   "dependencies": {
     "react": "16.6.3",
