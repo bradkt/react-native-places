@@ -29,8 +29,6 @@ class FindPlaceScreen extends Component {
       console.log(el.key);
       console.log(el.name);
     })
-    
-    console.log("----------------------------------------3-----------------------------------------------");
     console.log("--------------------------------------end----------------------------------------------");
     this.props.navigator.push({
       screen: "rnPlay.PlaceDetailScreen",
