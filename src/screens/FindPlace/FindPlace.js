@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
 import PlaceList from "../../components/PlaceList/PlaceList";
+import { getPlaces } from "../../store/actions/index";
 
 class FindPlaceScreen extends Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class FindPlaceScreen extends Component {
       }
     }
   };
+
+  componentDidMount() {
+    this.props.onLoadPlaces();
+  }
 
   itemSelectedHandler = key => {
     
@@ -54,7 +59,14 @@ class FindPlaceScreen extends Component {
 const mapStateToProps = state => {
   return {
     places: state.places.places
+
   };
 };
 
-export default connect(mapStateToProps)(FindPlaceScreen);
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadPlaces: () => dispatch(getPlaces())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FindPlaceScreen);
