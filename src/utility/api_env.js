@@ -1,0 +1,1 @@
+export const authAPI = "AIzaSyCnZN2cjZ0W7WQXMEWT6fUz7-zi9rTf990";
