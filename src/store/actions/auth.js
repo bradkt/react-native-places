@@ -1,6 +1,7 @@
 import { TRY_AUTH } from './actionTypes';
 import { authAPI } from "../../utility/api_env"
 
+
 export const tryAuth = (authData) => {
     return dispatch => {
         dispatch(authSignup(authData));
