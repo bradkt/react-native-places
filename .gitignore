@@ -56,4 +56,5 @@ buck-out/
 *.jsbundle
 
 # google cloud keys
+utility/api_env.js
 functions/fb-rnplay-key.json

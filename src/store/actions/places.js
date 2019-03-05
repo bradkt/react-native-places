@@ -1,4 +1,4 @@
-import { SET_PLACES } from './actionTypes';
+import { SET_PLACES, REMOVE_PLACE } from './actionTypes';
 import { uiStartLoading, uiStopLoading } from './index';
 // https://us-central1-fb-rnplay.cloudfunctions.net/storeImage
 
@@ -72,8 +72,25 @@ export const setPlaces = places => {
 };
 
 export const deletePlace = (key) => {
+    return dispatch => {
+        dispatch(removePlace(key));
+        fetch("https://fb-rnplay.firebaseio.com/places/" + key + ".json", {
+                method: "DELETE"
+            })
+            .catch(err => {
+                alert("Unable to delete place");
+                console.log(err);
+            })
+            .then(res => res.json())
+            .then(parsedRes => {
+                console.log("Done");
+            })
+    }
+};
+
+export const removePlace = key => {
     return {
-        type: DELETE_PLACE,
-        placeKey: key
+        type: REMOVE_PLACE,
+        key: key
     };
 };
