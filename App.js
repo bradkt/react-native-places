@@ -13,13 +13,13 @@ Navigation.registerComponent("rnPlay.AuthScreen", () => AuthScreen, store, Provi
 Navigation.registerComponent("rnPlay.SharePlaceScreen", () => SharePlaceScreen, store, Provider);
 Navigation.registerComponent("rnPlay.FindPlaceScreen", () => FindPlaceScreen, store, Provider);
 Navigation.registerComponent("rnPlay.PlaceDetailScreen", () => PlaceDetailScreen, store, Provider);
-Navigation.registerComponent("rnPlay.SideDrawer", () => SideDrawer);
+Navigation.registerComponent("rnPlay.SideDrawer", () => SideDrawer, store, Provider);
 
 
 // start nav app
-Navigation.startSingleScreenApp({
+export default () => Navigation.startSingleScreenApp({
   screen: {
     screen: "rnPlay.AuthScreen",
     title: "Login"
   }
-})
+});

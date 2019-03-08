@@ -1,7 +1,4 @@
-import {
-  SET_PLACES,
-  REMOVE_PLACE
-} from "../actions/actionTypes";
+import { SET_PLACES, REMOVE_PLACE } from "../actions/actionTypes";
 
 const initialState = {
   places: []

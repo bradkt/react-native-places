@@ -9,6 +9,11 @@ import {
 } from "react-native";
 import MapView from "react-native-maps";
 
+// Baltimore
+// latitude: 39.9350337,
+// longitude: -82.6026364,
+// latitudeDelta: 0.0122,
+
 class PickLocation extends Component {
   state = {
     focusedLocation: {
